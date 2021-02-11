@@ -16,6 +16,8 @@ bot = Bot(
 
 bot.cfg = config
 
-bot.load_initial_cogs()
+bot.load_initial_cogs(
+    "cogs.amp",
+)
 
 bot.run(botconf["token"])
