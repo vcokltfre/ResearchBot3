@@ -32,3 +32,6 @@ modules:
 
   autopin:
     channel: 738836486199181312
+
+  alerts:
+    channel: 737298182912082072
