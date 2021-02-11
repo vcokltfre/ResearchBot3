@@ -25,17 +25,15 @@ class Alerts(commands.Cog):
         acc_age = age(member.id)
 
         if acc_age >= WEEK:
-            return
+            channel = self.bot.get_channel(self.bot.cfg.module("alerts")["channel"])
 
-        channel = self.bot.get_channel(self.bot.cfg.module("alerts")["channel"])
-
-        s = acc_age % 60
-        m = (acc_age // 60) % 60
-        h = (acc_age // 3600) % 24
-        d = (acc_age // 86400) % 7
-        await channel.send(
-            f"NEW USER: {member.mention} ({member.id}) was created in the last week! ({d}d {h}h {m}m {s}s ago)"
-        )
+            s = acc_age % 60
+            m = (acc_age // 60) % 60
+            h = (acc_age // 3600) % 24
+            d = (acc_age // 86400) % 7
+            await channel.send(
+                f"NEW USER: {member.mention} ({member.id}) was created in the last week! ({d}d {h}h {m}m {s}s ago)"
+            )
 
         ## Welcome channel message
 
