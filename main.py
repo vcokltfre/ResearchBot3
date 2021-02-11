@@ -14,6 +14,8 @@ bot = Bot(
     help_command=None,
 )
 
+bot.cfg = config
+
 bot.load_initial_cogs()
 
 bot.run(botconf["token"])
