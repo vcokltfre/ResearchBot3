@@ -23,3 +23,6 @@ class ConfigLoader:
 
     def get(self, item: str, default=None):
         return self.data.get(item, default)
+
+    def module(self, name: str) -> dict:
+        return self.data["modules"].get(name, {})
