@@ -12,6 +12,9 @@ class AMP(commands.Cog):
 
     @commands.Cog.listener()
     async def on_message(self, message: Message):
+        if message.author.bot:
+            return
+
         if permission_level(self.bot, message.author) >= 10:
             return
 
