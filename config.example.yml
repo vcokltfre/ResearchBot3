@@ -2,6 +2,7 @@ bot:
   prefix: "!"
   token: "token"
   webhook: null
+  guild: 720723932738486323
 
 permissions:
   users:
