@@ -11,7 +11,7 @@ def age(snowflake: int) -> int:
 
 
 class Alerts(commands.Cog):
-    """A cog for alerting when new users join."""
+    """A cog for alerting when new users join, and welcoming them."""
 
     def __init__(self, bot: commands.Bot):
         self.bot = bot
@@ -33,6 +33,14 @@ class Alerts(commands.Cog):
         h = (acc_age // 3600) % 24
         d = (acc_age // 86400) % 7
         await channel.send(f"NEW USER: {member.mention} ({member.id}) was created in the last week! ({d}d {h}h {m}m {s}s ago)")
+
+        ## Welcome channel message
+
+        config = self.bot.get_channel(self.bot.cfg.module("welcome"))
+        channel = self.bot.get_channel(config["channel"])
+        content = config["message"].format(member=str(member))
+
+        await channel.send(content)
 
 
 def setup(bot: commands.Bot):
