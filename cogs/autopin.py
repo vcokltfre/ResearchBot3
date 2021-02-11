@@ -60,9 +60,9 @@ class AutoPin(commands.Cog):
             return
 
         try:
-            await self.message.delete()#
+            await self.message.delete()  #
         except:
-            pass # TODO: Debug logging (requires templatebot fix)
+            pass  # TODO: Debug logging (requires templatebot fix)
 
         self.message = await message.channel.send(content)
 

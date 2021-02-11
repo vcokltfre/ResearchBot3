@@ -1,6 +1,7 @@
 from discord import Member
 from discord.ext import commands
 
+
 def permission_level(bot: commands.Bot, member: Member) -> int:
     config = bot.cfg.get("permissions")
 
@@ -18,6 +19,7 @@ def permission_level(bot: commands.Bot, member: Member) -> int:
                 top = roles[role.id]
 
     return top
+
 
 def level(l: int):
     def predicate(ctx: commands.Context):

@@ -23,7 +23,9 @@ class Links(commands.Cog):
         try:
             short_url = self.api.shorten(url, short)
         except:
-            return await ctx.reply("Shortening the URL failed. Perhaps it is a dumplicate?")
+            return await ctx.reply(
+                "Shortening the URL failed. Perhaps it is a dumplicate?"
+            )
 
         await ctx.reply(f"Shortened URL: <{short_url['shorturl']}>")
 
@@ -34,11 +36,15 @@ class Links(commands.Cog):
 
         if url == "all":
             stats = self.api.stats()
-            return await ctx.reply(f"**__All Link Stats:__**\nTotal Links: {stats['total_links']}\nTotal Clicks: {stats['total_clicks']}")
+            return await ctx.reply(
+                f"**__All Link Stats:__**\nTotal Links: {stats['total_links']}\nTotal Clicks: {stats['total_clicks']}"
+            )
 
         try:
             stats = self.api.url_stats(url)
-            return await ctx.reply(f"**__Link Stats for <{stats['shorturl']}>:__**\nTotal Clicks: {stats['clicks']}")
+            return await ctx.reply(
+                f"**__Link Stats for <{stats['shorturl']}>:__**\nTotal Clicks: {stats['clicks']}"
+            )
         except Exception as e:
             await ctx.reply("That link couldn't be found.")
 
