@@ -28,3 +28,6 @@ modules:
   amp:
     muted_role: 721780279643209789
     max_mentions: 6
+
+  autopin:
+    channel: 738836486199181312

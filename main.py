@@ -18,6 +18,7 @@ bot.cfg = config
 
 bot.load_initial_cogs(
     "cogs.amp",
+    "cogs.autopin",
 )
 
 bot.run(botconf["token"])
