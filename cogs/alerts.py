@@ -4,6 +4,7 @@ from time import time
 
 WEEK = 24 * 3600 * 7
 
+
 def age(snowflake: int) -> int:
     timestamp = (snowflake >> 22) + 1420070400000
 
@@ -32,7 +33,9 @@ class Alerts(commands.Cog):
         m = (acc_age // 60) % 60
         h = (acc_age // 3600) % 24
         d = (acc_age // 86400) % 7
-        await channel.send(f"NEW USER: {member.mention} ({member.id}) was created in the last week! ({d}d {h}h {m}m {s}s ago)")
+        await channel.send(
+            f"NEW USER: {member.mention} ({member.id}) was created in the last week! ({d}d {h}h {m}m {s}s ago)"
+        )
 
         ## Welcome channel message
 
