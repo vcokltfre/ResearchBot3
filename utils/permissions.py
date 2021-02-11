@@ -1,5 +1,5 @@
 from discord import Member
-from discord.ext import commands, check, Context
+from discord.ext import commands
 
 def permission_level(bot: commands.Bot, member: Member) -> int:
     config = bot.cfg.get("permissions")
@@ -20,7 +20,7 @@ def permission_level(bot: commands.Bot, member: Member) -> int:
     return top
 
 def level(l: int):
-    def predicate(ctx: Context):
+    def predicate(ctx: commands.Context):
         pl = permission_level(ctx.bot, ctx.author)
 
         if pl >= l:
@@ -28,4 +28,4 @@ def level(l: int):
 
         return False
 
-    return check(predicate)
+    return commands.check(predicate)
