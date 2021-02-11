@@ -24,3 +24,6 @@ modules:
   welcome:
     channel: 797053871146926130
     message: "Welcome **{member}** to Minecraft@Home"
+
+  amp:
+    muted_role: 721780279643209789
