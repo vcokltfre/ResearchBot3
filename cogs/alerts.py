@@ -24,7 +24,7 @@ class Alerts(commands.Cog):
 
         acc_age = age(member.id)
 
-        if acc_age >= WEEK:
+        if acc_age <= WEEK:
             channel = self.bot.get_channel(self.bot.cfg.module("alerts")["channel"])
 
             s = acc_age % 60
