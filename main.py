@@ -16,6 +16,6 @@ bot = Bot(
 
 bot.cfg = config
 
-bot.load_initial_cogs("cogs.amp", "cogs.autopin", "cogs.links", "cogs.alerts")
+bot.load_initial_cogs("cogs.amp", "cogs.autopin", "cogs.links", "cogs.alerts", "cogs.antiloggers")
 
 bot.run(botconf["token"])
