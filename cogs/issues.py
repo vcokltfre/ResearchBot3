@@ -104,7 +104,7 @@ class Issues(commands.Cog):
         url = ISSUE_ENDPOINT.format(user=user, repository=repository, number=number)
         pulls_url = PR_ENDPOINT.format(user=user, repository=repository, number=number)
 
-        if self.session.closed():
+        if self.session.closed:
             self.session = ClientSession()
 
         async with self.session.get(url, headers=REQUEST_HEADERS) as r:
