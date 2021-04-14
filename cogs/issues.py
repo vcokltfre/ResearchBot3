@@ -176,7 +176,7 @@ class Issues(commands.Cog):
             ctx: commands.Context,
             numbers: commands.Greedy[int],
             repository: str = "sir-lancebot",
-            user: str = "python-discord"
+            user: str = "minecrafthome"
     ) -> None:
         """Command to retrieve issue(s) from a GitHub repository."""
         # Remove duplicates
@@ -240,7 +240,7 @@ class Issues(commands.Cog):
                 result = await self.fetch_issues(
                     int(repo_issue.number),
                     repo_issue.repository,
-                    repo_issue.organisation or "python-discord"
+                    repo_issue.organisation or "minecrafthome"
                 )
                 if isinstance(result, IssueState):
                     links.append(result)
@@ -248,7 +248,7 @@ class Issues(commands.Cog):
         if not links:
             return
 
-        resp = self.format_embed(links, "python-discord")
+        resp = self.format_embed(links, "minecrafthome")
         await message.channel.send(embed=resp)
 
 
